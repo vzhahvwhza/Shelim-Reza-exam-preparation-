@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Physics Exam</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f7fb;margin:0;color:#172033}
+.container{max-width:800px;margin:auto;padding:20px}
+.card{background:white;border-radius:16px;padding:22px;margin:15px 0;box-shadow:0 4px 15px #0001}
+h1{text-align:center;color:#1769aa}
+#timer{text-align:center;font-size:28px;font-weight:bold;color:#c62828;position:sticky;top:0;background:white;padding:12px;border-radius:12px}
+.option{display:block;background:#f1f5f9;padding:12px;margin:8px 0;border-radius:10px;cursor:pointer}
+button{width:100%;padding:14px;border:0;border-radius:10px;background:#1769aa;color:white;font-size:18px}
+#result{font-size:22px;text-align:center;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>দশম শ্রেণি — পদার্থবিজ্ঞান পরীক্ষা</h1>
+<div class="card">
+<div id="timer">সময়: 15:00</div>
+<p><b>অধ্যায়:</b> ২য় অধ্যায়</p>
+<p><b>প্রশ্ন:</b> ১৫টি | <b>সময়:</b> ১৫ মিনিট</p>
+</div>
+<form id="quiz"></form>
+<div class="card"><button type="button" onclick="submitQuiz()">পরীক্ষা জমা দিন</button><p id="result"></p></div>
+</div>
+<script>
+const questions=[
+["ভৌত রাশি বলতে কী বোঝায়?",["যা পরিমাপ করা যায়","যা শুধু দেখা যায়","যা শুধু শোনা যায়","যা কল্পনা করা যায়"],0],
+["দৈর্ঘ্যের SI একক কোনটি?",["সেন্টিমিটার","মিটার","কিলোমিটার","মিলিমিটার"],1],
+["সময় পরিমাপের SI একক কোনটি?",["মিনিট","ঘণ্টা","সেকেন্ড","দিন"],2],
+["বেগের SI একক কোনটি?",["m","m/s","m/s²","N"],1],
+["ত্বরণ কী?",["বেগের পরিবর্তনের হার","দূরত্বের পরিবর্তনের হার","সময়ের পরিবর্তন","ভরের পরিবর্তন"],0],
+["বল-এর SI একক কোনটি?",["জুল","ওয়াট","নিউটন","প্যাসকেল"],2],
+["কাজের SI একক কোনটি?",["জুল","নিউটন","ওয়াট","মিটার"],0],
+["ক্ষমতার SI একক কোনটি?",["জুল","ওয়াট","নিউটন","কুলম্ব"],1],
+["ভরবেগের সূত্র কোনটি?",["p=mv","p=m/v","p=v/m","p=ma"],0],
+["নিউটনের প্রথম সূত্রকে কী বলা হয়?",["জড়তার সূত্র","শক্তির সূত্র","ভরবেগের সূত্র","মহাকর্ষ সূত্র"],0],
+["ঘর্ষণ বল সাধারণত কোন দিকে কাজ করে?",["গতির দিকে","গতির বিপরীত দিকে","উপরের দিকে","নিচের দিকে"],1],
+["মুক্তভাবে পড়ন্ত বস্তুর ত্বরণকে কী বলা হয়?",["কেন্দ্রমুখী ত্বরণ","মহাকর্ষজ ত্বরণ","স্পন্দন ত্বরণ","শূন্য ত্বরণ"],1],
+["১ কিলোমিটার সমান কত মিটার?",["10","100","1000","10000"],2],
+["দূরত্ব ও সময় জানা থাকলে কোন রাশি নির্ণয় করা যায়?",["বেগ","ভর","বল","শক্তি"],0],
+["নিউটনের দ্বিতীয় সূত্রের সাথে কোন রাশি সরাসরি সম্পর্কিত?",["বল ও ভরবেগের পরিবর্তন","শুধু দূরত্ব","শুধু সময়","শুধু তাপমাত্রা"],0]
+];
+const quiz=document.getElementById("quiz");
+questions.forEach((q,i)=>{
+ let d=document.createElement("div"); d.className="card";
+ d.innerHTML=`<h3>${i+1}. ${q[0]}</h3>`+q[1].map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join("");
+ quiz.appendChild(d);
+});
+let time=15*60, submitted=false;
+const timer=setInterval(()=>{
+ if(submitted)return;
+ let m=Math.floor(time/60),s=time%60;
+ document.getElementById("timer").textContent=`সময়: ${m}:${String(s).padStart(2,"0")}`;
+ if(time<=0){clearInterval(timer);submitQuiz();} time--;
+},1000);
+function submitQuiz(){
+ if(submitted)return; submitted=true; clearInterval(timer);
+ let score=0;
+ questions.forEach((q,i)=>{let a=document.querySelector(`input[name="q${i}"]:checked`);if(a&&+a.value===q[2])score++;});
+ document.querySelectorAll("input").forEach(x=>x.disabled=true);
+ document.getElementById("result").textContent=`তোমার ফলাফল: ${score} / 15`;
+ window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
+}
+</script>
+</body>
+</html>
