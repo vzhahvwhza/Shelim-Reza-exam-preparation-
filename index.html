@@ -1,267 +1,366 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shelim Reza Exam Preparation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shelim Reza Exam Preparation</title>
 
-  <.hero {
-  min-height: 430px;
-  background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
-    linear-gradient(135deg, #1769aa, #512da8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#222
 }
-
-.hero-overlay {
-  padding: 30px;
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:25px;
+  color:white;
+  background:linear-gradient(135deg,#1769aa,#673ab7);
 }
-
-.play-button {
-  width: 75px;
-  height: 75px;
-  margin: auto;
-  border-radius: 50%;
-  background: white;
-  color: #1769aa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  animation: pulse 1.5s infinite;
+.hero-box{
+  max-width:600px;
 }
-
-.hero h1 {
-  font-size: 32px;
-  margin: 20px 0 10px;
+.logo{
+  width:90px;
+  height:90px;
+  margin:auto;
+  border-radius:50%;
+  background:white;
+  color:#1769aa;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  font-weight:bold;
 }
-
-.hero p {
-  font-size: 18px;
+h1{font-size:38px;margin:20px 0 10px}
+.hero p{font-size:19px;line-height:1.6}
+.play{
+  width:75px;
+  height:75px;
+  border:0;
+  border-radius:50%;
+  background:white;
+  color:#1769aa;
+  font-size:30px;
+  margin:20px;
 }
-
-.hero button,
-.exam-card button {
-  background: white;
-  color: #1769aa;
-  border: none;
-  padding: 13px 25px;
-  border-radius: 8px;
-  font-size: 17px;
-  font-weight: bold;
-  margin-top: 15px;
+.start{
+  border:0;
+  padding:15px 30px;
+  border-radius:30px;
+  background:#fff;
+  color:#1769aa;
+  font-weight:bold;
+  font-size:18px;
 }
-
-.exam-section,
-.leaderboard {
-  max-width: 800px;
-  margin: 25px auto;
-  padding: 20px;
+section{
+  max-width:800px;
+  margin:auto;
+  padding:25px 15px;
 }
-
-.exam-section h2,
-.leaderboard h2 {
-  text-align: center;
-  color: #1769aa;
+.title{
+  text-align:center;
+  color:#1769aa;
+  margin:10px 0 25px;
 }
-
-.exam-card {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,.12);
+.card{
+  background:white;
+  padding:20px;
+  margin:15px 0;
+  border-radius:18px;
+  box-shadow:0 5px 20px #0001;
 }
-
-.leader {
-  background: white;
-  padding: 18px;
-  margin: 10px 0;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+.card h2{margin-top:0}
+.btn{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  background:#1769aa;
+  color:white;
+  font-weight:bold;
+  font-size:16px;
 }
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f5f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #1769aa;
-      color: white;
-      text-align: center;
-      padding: 25px 10px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    header p {
-      margin: 8px 0 0;
-      font-size: 17px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 15px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 18px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    .welcome {
-      text-align: center;
-    }
-
-    .welcome h2 {
-      color: #1769aa;
-    }
-
-    .timer {
-      position: sticky;
-      top: 0;
-      background: #d32f2f;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      font-size: 22px;
-      font-weight: bold;
-      border-radius: 8px;
-      z-index: 10;
-    }
-
-    .question {
-      margin-bottom: 25px;
-    }
-
-    .question h3 {
-      font-size: 18px;
-      color: #222;
-    }
-
-    label {
-      display: block;
-      background: #f5f5f5;
-      padding: 10px;
-      margin: 7px 0;
-      border-radius: 7px;
-      cursor: pointer;
-    }
-
-    label:hover {
-      background: #e3f2fd;
-    }
-
-    button {
-      background: #1769aa;
-      color: white;
-      border: none;
-      padding: 13px 25px;
-      font-size: 17px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #0d47a1;
-    }
-
-    #result {
-      display: none;
-      text-align: center;
-      background: #e8f5e9;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-  </style>
+.video{
+  height:220px;
+  background:#111;
+  border-radius:18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+.exam{
+  display:none;
+}
+.timer{
+  position:sticky;
+  top:0;
+  background:white;
+  padding:15px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+  color:#d32f2f;
+}
+.option{
+  width:100%;
+  text-align:left;
+  padding:14px;
+  margin:7px 0;
+  background:white;
+  border:1px solid #ddd;
+  border-radius:10px;
+}
+.option:hover{
+  background:#eaf4ff;
+}
+.result{
+  text-align:center;
+  padding:30px;
+}
+.score{
+  font-size:50px;
+  color:#1769aa;
+  font-weight:bold;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Welcome to Shelim Reza Exam Preparation</h1>
-  <p>Class 10 Physics Model Test</p>
-</header>
+<div class="hero">
+  <div class="hero-box">
+    <div class="logo">SR</div>
 
-<div class="container">
+    <h1>Welcome to<br>
+    Shelim Reza Exam Preparation</h1>
 
-  <div class="card welcome">
-    <h2>📚 পদার্থবিজ্ঞান পরীক্ষা</h2>
-    <p>অধ্যায়: গতি ও বল</p>
-    <p>মোট প্রশ্ন: ১৫টি</p>
-    <p>সময়: ১৫ মিনিট</p>
-    <p>প্রতিটি প্রশ্নের সঠিক উত্তর নির্বাচন করো।</p>
+    <p>
+      পরীক্ষার প্রস্তুতি নাও এবং নিজের দক্ষতা যাচাই করো।
+    </p>
+
+    <button class="play">▶</button>
+
+    <br>
+
+    <button class="start"
+      onclick="showExam()">
+      🚀 Exam Section
+    </button>
   </div>
+</div>
 
-  <div class="timer">
-    ⏱️ সময় বাকি: <span id="time">15:00</span>
-  </div>
+<section>
+<h2 class="title">🎥 Exam Preparation Video</h2>
 
-  <div class="card">
+<div class="video">
+  <button class="play">▶</button>
+</div>
+</section>
 
-    <div class="question">
-      <h3>১. বেগের SI একক কোনটি?</h3>
-      <label><input type="radio" name="q1" value="a"> ক) মিটার</label>
-      <label><input type="radio" name="q1" value="b"> খ) মিটার/সেকেন্ড</label>
-      <label><input type="radio" name="q1" value="c"> গ) কিলোগ্রাম</label>
-      <label><input type="radio" name="q1" value="d"> ঘ) নিউটন</label>
-    </div>
+<section id="home">
+<h2 class="title">📝 Exam Section</h2>
 
-    <div class="question">
-      <h3>২. বলের SI একক কী?</h3>
-      <label><input type="radio" name="q2" value="a"> ক) জুল</label>
-      <label><input type="radio" name="q2" value="b"> খ) ওয়াট</label>
-      <label><input type="radio" name="q2" value="c"> গ) নিউটন</label>
-      <label><input type="radio" name="q2" value="d"> ঘ) প্যাসকেল</label>
-    </div>
+<div class="card">
+<h2>Class 10 Physics</h2>
+<p>অধ্যায় ২ থেকে ১৫টি MCQ</p>
+<p>⏱️ সময়: ১৫ মিনিট</p>
 
-    <div class="question">
-      <h3>৩. নিউটনের প্রথম সূত্রকে কী বলা হয়?</h3>
-      <label><input type="radio" name="q3" value="a"> ক) জড়তার সূত্র</label>
-      <label><input type="radio" name="q3" value="b"> খ) শক্তির সূত্র</label>
-      <label><input type="radio" name="q3" value="c"> গ) ভরের সূত্র</label>
-      <label><input type="radio" name="q3" value="d"> ঘ) তাপের সূত্র</label>
-    </div>
+<button class="btn" onclick="showExam()">
+পরীক্ষা শুরু করুন
+</button>
+</div>
 
-    <div class="question">
-      <h3>৪. ত্বরণের SI একক কোনটি?</h3>
-      <label><input type="radio" name="q4" value="a"> ক) m/s</label>
-      <label><input type="radio" name="q4" value="b"> খ) m/s²</label>
-      <label><input type="radio" name="q4" value="c"> গ) kg</label>
-      <label><input type="radio" name="q4" value="d"> ঘ) N</label>
-    </div>
+<div class="card">
+<h2>🏆 Leaderboard</h2>
+<p>🥇 Rahim — 14/15</p>
+<p>🥈 Karim — 13/15</p>
+<p>🥉 Sohan — 12/15</p>
+</div>
+</section>
 
-    <div class="question">
-      <h3>৫. কোনো বস্তুর স্থিতি পরিবর্তনকে কী বলা হয়?</h3>
-      <label><input type="radio" name="q5" value="a"> ক) গতি</label>
-      <label><input type="radio" name="q5" value="b"> খ) ভর</label>
-      <label><input type="radio" name="q5" value="c"> গ) বল</label>
-      <label><input type="radio" name="q5" value="d"> ঘ) শক্তি</label>
-    </div>
+<section id="exam" class="exam">
 
-    <div class="question">
-      <h3>৬. নিউটনের দ্বিতীয় সূত্রের সমীকরণ কোনটি?</h3>
-      <label><input type="radio" name="q6" value="a"> ক) F = ma</label>
-      <label><input type="radio" name="q6" value="b"> খ
+<div class="timer">
+⏱️ সময় বাকি: <span id="time">15:00</span>
+</div>
+
+<div class="card">
+<h3 id="question"></h3>
+
+<div id="options"></div>
+
+<button class="btn" onclick="nextQuestion()">
+পরের প্রশ্ন
+</button>
+</div>
+
+</section>
+
+<section id="result" class="exam result">
+<h2>🎉 পরীক্ষা শেষ</h2>
+<div class="score" id="score"></div>
+<p>তোমার ফলাফল উপরে দেখানো হয়েছে।</p>
+
+<button class="btn" onclick="location.reload()">
+আবার শুরু করুন
+</button>
+</section>
+
+<script>
+
+let questions=[
+["বেগের SI একক কোনটি?",
+["মিটার","মিটার/সেকেন্ড","নিউটন","জুল"],1],
+
+["বলের SI একক কোনটি?",
+["জুল","ওয়াট","নিউটন","ভোল্ট"],2],
+
+["নিউটনের দ্বিতীয় সূত্র কোনটি?",
+["F=ma","V=IR","P=VI","W=Fs"],0],
+
+["কাজের SI একক কী?",
+["জুল","নিউটন","ওয়াট","ভোল্ট"],0],
+
+["পৃথিবীর অভিকর্ষজ ত্বরণ প্রায় কত?",
+["9.8 m/s²","98 m/s²","0.98 m/s²","8.9 m/s²"],0],
+
+["ভরবেগের সূত্র কোনটি?",
+["p=mv","F=ma","W=mg","V=s/t"],0],
+
+["ক্ষমতার SI একক কী?",
+["জুল","ওয়াট","নিউটন","ভোল্ট"],1],
+
+["চাপের SI একক কী?",
+["প্যাসকেল","জুল","ওয়াট","নিউটন"],0],
+
+["বিদ্যুৎ প্রবাহের একক কী?",
+["ভোল্ট","ওহম","অ্যাম্পিয়ার","জুল"],2],
+
+["ওহমের সূত্র কোনটি?",
+["V=IR","F=ma","P=VI","W=Fs"],0],
+
+["শক্তির SI একক কী?",
+["জুল","ওয়াট","নিউটন","হার্টজ"],0],
+
+["কম্পাঙ্কের SI একক কী?",
+["মিটার","হার্টজ","সেকেন্ড","জুল"],1],
+
+["ঘনত্বের সূত্র কোনটি?",
+["m/V","V/m","F/A","W/t"],0],
+
+["শূন্যস্থানে আলোর বেগ প্রায় কত?",
+["3×10⁸ m/s","3×10⁶ m/s","3×10⁵ m/s","3×10³ m/s"],0],
+
+["নিউটনের প্রথম সূত্র কী সম্পর্কিত?",
+["জড়তা","শক্তি","তাপ","আলো"],0]
+];
+
+let current=0;
+let score=0;
+let time=900;
+let timer;
+
+function showExam(){
+
+document.getElementById("home").style.display="none";
+document.getElementById("exam").style.display="block";
+
+current=0;
+score=0;
+time=900;
+
+showQuestion();
+
+clearInterval(timer);
+
+timer=setInterval(function(){
+
+time--;
+
+let m=Math.floor(time/60);
+let s=time%60;
+
+document.getElementById("time").innerText=
+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+
+if(time<=0){
+finish();
+}
+
+},1000);
+}
+
+function showQuestion(){
+
+let q=questions[current];
+
+document.getElementById("question").innerText=
+"প্রশ্ন "+(current+1)+" / "+questions.length+" : "+q[0];
+
+let html="";
+
+q[1].forEach(function(option,i){
+
+html+=`
+<button class="option"
+onclick="answer(${i})">
+${String.fromCharCode(65+i)}. ${option}
+</button>
+`;
+
+});
+
+document.getElementById("options").innerHTML=html;
+}
+
+function answer(i){
+
+if(i===questions[current][2]){
+score++;
+}
+
+document.querySelectorAll(".option").forEach(function(btn){
+btn.disabled=true;
+});
+
+}
+
+function nextQuestion(){
+
+if(current<questions.length-1){
+
+current++;
+showQuestion();
+
+}else{
+
+finish();
+
+}
+}
+
+function finish(){
+
+clearInterval(timer);
+
+document.getElementById("exam").style.display="none";
+document.getElementById("result").style.display="block";
+
+document.getElementById("score").innerText=
+score+" / "+questions.length;
+
+}
+
+</script>
+
+</body>
+</html>
