@@ -5,7 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shelim Reza Exam Preparation</title>
 
-  <style>
+  <.hero {
+  min-height: 430px;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+    linear-gradient(135deg, #1769aa, #512da8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  padding: 30px;
+}
+
+.play-button {
+  width: 75px;
+  height: 75px;
+  margin: auto;
+  border-radius: 50%;
+  background: white;
+  color: #1769aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  animation: pulse 1.5s infinite;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 20px 0 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.hero button,
+.exam-card button {
+  background: white;
+  color: #1769aa;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.exam-section,
+.leaderboard {
+  max-width: 800px;
+  margin: 25px auto;
+  padding: 20px;
+}
+
+.exam-section h2,
+.leaderboard h2 {
+  text-align: center;
+  color: #1769aa;
+}
+
+.exam-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,.12);
+}
+
+.leader {
+  background: white;
+  padding: 18px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}>
     body {
       font-family: Arial, sans-serif;
       background: #f2f5f9;
